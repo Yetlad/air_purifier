@@ -1,0 +1,144 @@
+{
+  "id": null,
+  "title": "Air Purifier Monitor",
+  "tags": ["air-purifier", "sensors"],
+  "timezone": "browser",
+  "uid": "air-purifier-monitor",
+    "panels": [
+      {
+        "id": 1,
+        "title": "CO2 Levels (PPM)",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "air_purifier_co2_ppm",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "steps": [
+                {"color": "green", "value": null},
+                {"color": "yellow", "value": 800},
+                {"color": "red", "value": 1000}
+              ]
+            },
+            "unit": "ppm"
+          }
+        },
+        "gridPos": {"h": 8, "w": 8, "x": 0, "y": 0}
+      },
+      {
+        "id": 2,
+        "title": "Humidity (%)",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "air_purifier_humidity_percent",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "steps": [
+                {"color": "red", "value": null},
+                {"color": "green", "value": 30},
+                {"color": "yellow", "value": 60},
+                {"color": "red", "value": 70}
+              ]
+            },
+            "unit": "percent"
+          }
+        },
+        "gridPos": {"h": 8, "w": 8, "x": 8, "y": 0}
+      },
+      {
+        "id": 3,
+        "title": "Temperature (°C)",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "air_purifier_temperature_celsius",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "steps": [
+                {"color": "blue", "value": null},
+                {"color": "green", "value": 18},
+                {"color": "yellow", "value": 25},
+                {"color": "red", "value": 28}
+              ]
+            },
+            "unit": "celsius"
+          }
+        },
+        "gridPos": {"h": 8, "w": 8, "x": 16, "y": 0}
+      },
+      {
+        "id": 4,
+        "title": "CO2 Trend",
+        "type": "timeseries",
+        "targets": [
+          {
+            "expr": "air_purifier_co2_ppm",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "unit": "ppm"
+          }
+        },
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8}
+      },
+      {
+        "id": 5,
+        "title": "Humidity & Temperature Trend",
+        "type": "timeseries",
+        "targets": [
+          {
+            "expr": "air_purifier_humidity_percent",
+            "refId": "A",
+            "legendFormat": "Humidity %"
+          },
+          {
+            "expr": "air_purifier_temperature_celsius",
+            "refId": "B",
+            "legendFormat": "Temperature °C"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            }
+          }
+        },
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8}
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "refresh": "30s",
+    "schemaVersion": 30,
+    "version": 1
+}
