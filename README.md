@@ -1,7 +1,5 @@
 **Air Purifier Monitoring System**
-**# Air Purifier Monitoring System - Project Report
 **
-## Executive Summary
 
 This project implements a comprehensive real-time monitoring system for air purifier sensor data using a modern microservices architecture. The system collects, processes, stores, and visualizes environmental data (CO2, humidity, temperature) using industry-standard tools and best practices.
 
@@ -11,19 +9,6 @@ This project implements a comprehensive real-time monitoring system for air puri
 
 ---
 
-## Table of Contents
-
-1. Project Overview
-2. System Architecture
-3. Technology Stack
-4. Implementation Steps
-5. Data Flow
-6. Component Details
-7. Testing and Validation
-8. Deployment
-9. Monitoring and Observability
-10. Conclusion
----
 
 ## 1. Project Overview
 
@@ -844,11 +829,4 @@ WHERE timestamp > NOW() - INTERVAL '7 days';
 
 ---
 
-**Project Status**: ✅ Complete and Production-Ready
 
-**Last Updated**: November 2025
-
-
-**Author**: Yetunde Abdulazeez-Ado
-
-**License**: 
